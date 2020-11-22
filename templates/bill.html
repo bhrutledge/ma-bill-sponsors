@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>{{ bill.name }}</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+        integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+        crossorigin=""/>
+
+    <!-- https://datatables.net/download/index -->
+    <!-- TODO: https://datatables.net/examples/styling/bootstrap4.html -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.15/datatables.min.css"/>
+
+    <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+    <article class="container">
+        <header>
+            <h1>Sponsors for {{ bill.name }}</h1>
+            <h2>{{ bill.title }}</h2>
+        </header>
+
+        <p>House: {{ tally.house_sponsors }} / {{ tally.house }}</p>
+        <p>Senate: {{ tally.senate_sponsors }} / {{ tally.senate }}</p>
+
+        <div id="map"></div>
+
+        <table id="bill_table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Chamber</th>
+                    <th>District</th>
+                    <th>Legislator</th>
+                    <th>Party</th>
+                    <th>Sponsor</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for leg in legislators %}
+                <tr>
+                    <td>{{ leg.chamber }}</td>
+                    <td>{{ leg.district }}</td>
+                    <td>
+                        <a href="{{ leg.url }}">
+                            {{ leg.first_name }} {{ leg.last_name }}
+                        </a>
+                    </td>
+                    <td>{{ leg.party }}</td>
+                    <td>{{ 'Yes' if leg.sponsor }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <footer>
+            Source:
+            <br><a href="{{ bill.url }}">{{ bill.url }}</a>
+        </footer>
+    </article>
+
+    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+        integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+        crossorigin=""></script>
+    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+    <script src="/static/map.js"></script>
+
+    <script src="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.15/datatables.min.js"></script>
+    <script>
+        $(function () {
+            // TODO: https://datatables.net/reference/option/
+            // TODO: https://datatables.net/extensions/fixedheader/
+            // TODO: https://datatables.net/extensions/rowgroup/
+            // TODO: https://datatables.net/examples/advanced_init/footer_callback.html
+            $('#bill_table').DataTable();
+        });
+    </script>
+</body>
+</html>

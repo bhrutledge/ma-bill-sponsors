@@ -1,0 +1,20 @@
+#map {
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.leaflet-tile-pane {
+    opacity: 0.5;
+}
+
+.district {
+    fill: #666;
+    stroke: #337ab7;
+    stroke-width: 1;
+}
+
+.district--sponsored {
+    fill: #337ab7;
+    fill-opacity: 0.75;
+}
