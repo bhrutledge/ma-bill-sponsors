@@ -133,3 +133,7 @@ def get_legislators_for_bill(term_name, bill_name):
     return render_template(
         'bill.html', bill=bill, legislators=legislators, tally=tally
     )
+
+@app.route('/')
+def index():
+    return render_template('index.html')
