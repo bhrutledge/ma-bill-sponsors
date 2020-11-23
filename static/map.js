@@ -11,8 +11,9 @@ MapApp.render = function (billData, houseData, senateData) {
             var district = districts[feature.properties.district];
             layer.bindPopup(
                 district.district + '<br>' +
-                // TODO: Legislator URL
-                district.first_name + ' ' + district.last_name + '<br>'
+                '<a href="' + district.url + '">' +
+                district.first_name + ' ' + district.last_name +
+                '</a><br>'
             );
         },
         style: function (feature) {
