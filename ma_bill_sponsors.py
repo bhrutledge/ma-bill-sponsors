@@ -2,6 +2,7 @@ import csv
 from collections import OrderedDict
 from io import StringIO
 from pathlib import PurePath
+from datetime import timedelta
 
 import requests
 import requests_cache
@@ -13,8 +14,7 @@ app = Flask(__name__)
 # Assuming we'll be using OrderedDict
 app.config["JSON_SORT_KEYS"] = False
 
-# TODO: Cache expiration
-requests_cache.install_cache()
+requests_cache.install_cache(expire_after=timedelta(minutes=10))
 
 with open("static/ma_legislators.json") as leg_file:
     LEGISLATORS = json.load(leg_file)
