@@ -1,6 +1,6 @@
 # MA Bills
 
-<https://ma-bills.herokuapp.com>
+<https://ma-bill-sponsors.herokuapp.com>
 
 ## TODO
 

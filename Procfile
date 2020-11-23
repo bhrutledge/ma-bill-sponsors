@@ -1,1 +1,1 @@
-web: gunicorn ma_bills:app --log-file -
+web: gunicorn ma_bill_sponsors:app --log-file -
