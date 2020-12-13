@@ -11,4 +11,4 @@ Written as a proof-of-concept in 2017.
 - Turn these into GitHub Issues
 - Add local dev instructions
 - Automate updating district and legislator data
-    - See [bhrutledge/ma-legislators](https://github.com/bhrutledge/ma-legislators)
+    - See [bhrutledge/ma-legislature](https://github.com/bhrutledge/ma-legislature)
