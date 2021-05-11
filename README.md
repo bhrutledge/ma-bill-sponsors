@@ -8,7 +8,4 @@ Written as a proof-of-concept in 2017.
 
 ## TODO
 
-- Turn these into GitHub Issues
 - Add local dev instructions
-- Automate updating district and legislator data
-    - See [bhrutledge/ma-legislature](https://github.com/bhrutledge/ma-legislature)

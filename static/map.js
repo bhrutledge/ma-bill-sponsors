@@ -49,8 +49,8 @@ MapApp.render = function (billData, houseData, senateData) {
 Promise.all(
     [
         window.location + '?format=json',
-        '/static/ma_house_districts.geojson',
-        '/static/ma_senate_districts.geojson',
+        'https://bhrutledge.com/ma-legislature/dist/ma_house.geojson',
+        'https://bhrutledge.com/ma-legislature/dist/ma_senate.geojson',
     ]
     .map(function (url) {
         return fetch(url)

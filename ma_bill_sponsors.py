@@ -7,7 +7,7 @@ from datetime import timedelta
 import requests
 import requests_cache
 from bs4 import BeautifulSoup
-from flask import Flask, abort, json, jsonify, render_template, request
+from flask import Flask, abort, jsonify, render_template, request
 
 app = Flask(__name__)
 
@@ -16,9 +16,9 @@ app.config["JSON_SORT_KEYS"] = False
 
 requests_cache.install_cache(expire_after=timedelta(minutes=10))
 
-with open("static/ma_legislators.json") as leg_file:
-    LEGISLATORS = json.load(leg_file)
-
+LEGISLATORS = requests.get(
+    "https://bhrutledge.com/ma-legislature/dist/ma_legislators.json"
+).json()
 LEGISLATOR_FIELDS = ["chamber", "district", "first_name", "last_name", "party", "url"]
 
 BASE_URL = "https://malegislature.gov"
