@@ -31,11 +31,13 @@ MapApp.render = function (billData, houseData, senateData) {
         'Senate': L.geoJson(senateData, districtOptions),
     };
 
+    var chamber = window.location.pathname.includes('/S') ? 'Senate': 'House';
+
     // TODO: Constrain zoom and bounds
     // TODO: Search
     MapApp.map = L.map('map')
         .addLayer(L.stamenTileLayer('toner-lite'))
-        .addLayer(districtLayers['House'])
+        .addLayer(districtLayers[chamber])
         .addControl(
             L.control.layers(districtLayers, {}, {
                 collapsed: false
