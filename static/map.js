@@ -10,10 +10,11 @@ MapApp.render = function (billData, houseData, senateData) {
         onEachFeature: function (feature, layer) {
             var district = districts[feature.properties.district];
             layer.bindPopup(
-                district.district + '<br>' +
                 '<a href="' + district.url + '">' +
                 district.first_name + ' ' + district.last_name +
-                '</a><br>'
+                '</a><br>' +
+                district.party + '<br>' +
+                district.district
             );
         },
         style: function (feature) {
