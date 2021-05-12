@@ -4,10 +4,6 @@
     margin: 0 auto 3rem;
 }
 
-.leaflet-tile-pane {
-    opacity: 0.5;
-}
-
 .district {
     fill: #666;
     stroke: #337ab7;

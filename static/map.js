@@ -36,7 +36,7 @@ MapApp.render = function (billData, houseData, senateData) {
     // TODO: Constrain zoom and bounds
     // TODO: Search
     MapApp.map = L.map('map')
-        .addLayer(L.stamenTileLayer('toner-lite'))
+        .addLayer(L.tileLayer.provider('CartoDB.Positron'))
         .addLayer(districtLayers[chamber])
         .addControl(
             L.control.layers(districtLayers, {}, {
