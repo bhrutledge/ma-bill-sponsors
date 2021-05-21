@@ -38,3 +38,4 @@ $ git push heroku
 ## TODO
 
 - Rebuild map based on <https://bhrutledge.com/ma-legislature/> and <https://github.com/actonmass/campaign-map>
+- Deploy via push to GitHub
