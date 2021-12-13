@@ -34,7 +34,7 @@ requests-cache==0.5.2
     # via -r requirements.in
 soupsieve==2.0.1
     # via beautifulsoup4
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
 werkzeug==1.0.1
     # via flask
